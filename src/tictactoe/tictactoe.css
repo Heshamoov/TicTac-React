@@ -54,3 +54,6 @@ ul {
 .game-info {
   margin-left: 20px;
 }
+ol li {
+  padding: 4px;
+}
