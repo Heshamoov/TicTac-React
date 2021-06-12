@@ -1,0 +1,38 @@
+body {
+  font-family: Helvetica;
+  background-color: burlywood;
+}
+.quadrant {
+  color: white;
+  width: 200px;
+  height: 100px;
+}
+
+.quadrant span {
+  padding: 10px;
+}
+
+.quadrants div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  @media only screen and (max-width: 420px) {
+    flex-direction: column;
+  }
+}
+
+.soluations {
+  background-color: cadetblue;
+}
+.shortest {
+  background-color: tomato;
+}
+.first {
+  background-color: lightgreen;
+}
+.authored {
+  background-color: darkblue;
+}
