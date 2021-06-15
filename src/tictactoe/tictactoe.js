@@ -1,7 +1,10 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import "@fontsource/roboto";
 import "./tictactoe.css";
+import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import IconeButton from "@material-ui/core/IconButton";
+import PlayCircleFilledWhiteOutlinedIcon from "@material-ui/icons/PlayCircleFilledWhiteOutlined";
 
 function Square(props) {
   return (
@@ -128,23 +131,24 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
-      const desc = move ? "Go to move #" + move : "Go to game start";
+      const desc = move ? move : <PlayCircleFilledWhiteOutlinedIcon />;
       return (
-        <li key={move}>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => this.jumpTo(move)}
-          >
-            {desc}
-          </Button>
-        </li>
+        <IconeButton
+          aria-label="PlayCircleFilledWhiteOutlinedIcon"
+          variant="outlined"
+          color="primary"
+          size="small"
+          onClick={() => this.jumpTo(move)}
+          key={move}
+        >
+          {desc}
+        </IconeButton>
       );
     });
 
     let status;
     if (winner) {
-      status = "Winner: " + winner;
+      status = <h3 style={{ color: "green" }}>{winner} is the winner!"</h3>;
     } else {
       status = "Player: " + (this.state.xIsNext ? "X" : "O");
     }
@@ -165,7 +169,16 @@ class Game extends React.Component {
 
           <div className="game-info">
             <div>{status}</div>
-            <ol>{moves}</ol>
+
+            <div className="history">
+              <ButtonGroup
+                orientation="vertical"
+                color="primary"
+                aria-label="vertical outlined primary button group"
+              >
+                {moves}
+              </ButtonGroup>
+            </div>
           </div>
         </div>
       </div>
