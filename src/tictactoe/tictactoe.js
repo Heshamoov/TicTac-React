@@ -135,8 +135,8 @@ class Game extends React.Component {
       return (
         <IconeButton
           aria-label="PlayCircleFilledWhiteOutlinedIcon"
-          variant="outlined"
-          color="primary"
+          // variant="outlined"
+          // color="primary"
           size="small"
           onClick={() => this.jumpTo(move)}
           key={move}
@@ -148,38 +148,39 @@ class Game extends React.Component {
 
     let status;
     if (winner) {
-      status = <h3 style={{ color: "green" }}>{winner} is the winner!"</h3>;
+      status = winner + " is the winner!";
     } else {
-      status = "Player: " + (this.state.xIsNext ? "X" : "O");
+      status = this.state.xIsNext ? "X" : "O";
     }
 
     return (
       <div className="game">
-        <div className="game-title">
-          <h1>TIC TAC TOE</h1>
+        <div className="game-info">
+          <h3>{status}</h3>
+        </div>
+        <div className="game-board">
+          <Board
+            squares={current.squares}
+            onClick={(i) => this.handleClick(i)}
+          />
         </div>
 
-        <div className="game-board">
-          <div className="game-squares">
-            <Board
-              squares={current.squares}
-              onClick={(i) => this.handleClick(i)}
+        <div className="history">
+          <IconeButton
+            aria-label="PlayCircleFilledWhiteOutlinedIcon"
+            onClick={() => this.jumpTo(0)}
+          >
+            <PlayCircleFilledWhiteOutlinedIcon
+              style={{ fontSize: 70, color: "#deca63" }}
             />
-          </div>
-
-          <div className="game-info">
-            <div>{status}</div>
-
-            <div className="history">
-              <ButtonGroup
-                orientation="vertical"
-                color="primary"
-                aria-label="vertical outlined primary button group"
-              >
-                {moves}
-              </ButtonGroup>
-            </div>
-          </div>
+          </IconeButton>
+          {/* <ButtonGroup
+            orientation="vertical"
+            color="primary"
+            aria-label="vertical outlined primary button group"
+          >
+            {moves}
+          </ButtonGroup> */}
         </div>
       </div>
     );

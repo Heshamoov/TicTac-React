@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
-import Game from "./tictactoe/tictactoe";
+// import Game from "./tictactoe/tictactoe";
 // import Book from "./booksLibrary/books";
 // import App from "./responsive/responsive";
+import FullpageWrapper from "./FullpageView/fullPageView";
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<FullpageWrapper />, document.getElementById("root"));

@@ -1,0 +1,26 @@
+body {
+  font-family: arial, helvetica;
+}
+
+h3 {
+  font-size: 4em;
+  text-align: center;
+  opacity: 0.5;
+  color: #deca63;
+  font-weight: 700;
+  margin: 10px;
+  margin-top: -80px;
+}
+
+button {
+  padding: 0.93em 1.87em;
+  background: #35495e;
+  border-radius: 5px;
+  border-color: transparent;
+  display: block;
+  color: white;
+  /* opacity: 0.5; */
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 0.85em;
+}
