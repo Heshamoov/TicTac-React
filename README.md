@@ -1,4 +1,4 @@
-4x4 TicTacToe game, developed using React!
+4x4 TIC TAC TOE game, developed using React!
 
 Availalbe on this link 
 https://tictac2o.netlify.app/
