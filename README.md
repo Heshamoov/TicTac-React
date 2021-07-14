@@ -1,4 +1,4 @@
-#6x6 TicTacToe Game! 🕹#
+# H1 6x6 TicTacToe Game! 🕹#
 4 squares to WIN.
 Developed using ReactJS!
 
